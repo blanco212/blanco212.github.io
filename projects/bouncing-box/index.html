@@ -6,10 +6,10 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 70px;
-			height: 70px;
+			width: 100px;
+			height: 100px;
 			background-color: teal;
-			font-size: 300%;
+			font-size: 400%;
 			text-align: center;
 			user-select: none;
 			display: block;
@@ -47,10 +47,12 @@
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
 
+
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
+			function moveBoxTo(NewPositionX) {
+				box.css("left",NewPositionX);
 			}
+			
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
@@ -63,7 +65,8 @@
 			
 			// TODO 2 - Variable declarations 
 			
-
+			var positionX = 0;
+             var speed = 10
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -71,21 +74,26 @@
 			turn it around! 
 			*/
 			function update() {
-				
+				 /* Your Code to Increase positionX by 10 HERE*/
+				 moveBoxTo(positionX)
+				 positionX = positionX + speed;
 
-			};
+                
+
+              };
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
-			function handleBoxClick() {
-				
+		function handleBoxClick(){
+			positionX = 0;
+			changeBoxText(1);
+		}
 
-
-			};
-		})();
+			
+						});
 	</script>
 </body>
 </html>
