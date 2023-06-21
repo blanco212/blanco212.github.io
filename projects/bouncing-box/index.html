@@ -80,6 +80,17 @@
 				 moveBoxTo(positionX)
 				 positionX = positionX + speed;
 
+				 if (positionX > boardWidth) {
+					speed = -speed;
+					
+
+
+				 }
+                
+				 if (positionX < 0) {
+        speed = Math.abs(speed); 
+    }
+
                 
 
               };
@@ -97,6 +108,10 @@
 			speed = speed + 3;
 
 			changeBoxText(points);
+
+			
+        
+
 		}
 
 			
