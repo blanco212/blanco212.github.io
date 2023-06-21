@@ -48,6 +48,7 @@
 			box.on('click', handleBoxClick);
 
 
+
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(NewPositionX) {
 				box.css("left",NewPositionX);
@@ -67,6 +68,7 @@
 			
 			var positionX = 0;
              var speed = 10
+			 var points = 0
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -89,11 +91,16 @@
 			*/
 		function handleBoxClick(){
 			positionX = 0;
-			changeBoxText(1);
+
+			points = points + 1;
+
+			speed = speed + 3;
+
+			changeBoxText(points);
 		}
 
 			
-						});
+						})();
 	</script>
 </body>
 </html>
